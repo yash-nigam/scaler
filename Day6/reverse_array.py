@@ -7,11 +7,16 @@ def swap(Arr, A, B):
     return Arr
     
 Arr=[1,2,3,4,5,6,7,8]
-l=0
-r=len(Arr)-1
+# l=0
+# r=len(Arr)-1
+# reverse betweek specific index
+l=1
+r=6
+print(f"Initial Array={Arr}")
 while(l<r):
-    print(f"Swap index l={l} val={Arr[l]} with index r={r} val{Arr[r]}")
+    #print(f"Swap index l={l} val={Arr[l]} with index r={r} val{Arr[r]}")
+    print(f"Swap Arr[{l}]={Arr[l]} with Arr[{r}]={Arr[r]}")
     print(swap(Arr,l,r))
     l+=1
     r-=1
-
+    
