@@ -25,6 +25,25 @@ class Solution:
             res += x if x >= 0 else 0
             print(res)
 
+# 2 pointer approach
+class Solution2:
+    def rainwatertrap(self, heights: list[int]) -> int:
+        
+        #edge case
+        if not heights:
+            return 0
+        res,l,r = 0,0,len(heights)-1
+        lmax, rmax = heights[l], heights[r]
+        while l<r:
+            if lmax < rmax:
+                l+=1 
+                lmax = max(lmax, heights[l])
+                res += lmax-heights[l]
+            else:
+                r-=1 
+                rmax = max(rmax, heights[r])
+                res += rmax-heights[r]
+        return res
 
-s= Solution()
-s.rainwatertrap([0,1,0,2,1,0,1,3,2,1,2,1])
+s= Solution2()
+print(s.rainwatertrap([0,1,0,2,1,0,1,3,2,1,2,1]))
