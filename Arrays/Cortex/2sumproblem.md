@@ -31,6 +31,19 @@ We need two nested for loops. If the target is never found:
 **Total Iterations:** $6 + 5 + 4 + 3 + 2 + 1 = 21$
 **Formula:** $\frac{n(n-1)}{2} \rightarrow \frac{7(7-1)}{2} = \frac{42}{2} = 21$ iterations.
 
+
+## Time Complexity: 
+O(n^2)
+
+The time complexity is Quadratic.
+
+Total iterations are n(n-1)/2 becoz we have nested loop 
+
+### In Big O notation
+we drop constants and lower-order terms, leaving us with $O(n^2)$.
+
+Performance Impact: As your input array grows, the time it takes to finish grows exponentially. If the array size doubles, *the work required quadruples.*
+
 ---
 
 ## Option 2: Use Hash Map
@@ -43,6 +56,7 @@ In Python, a HashMap is implemented through the built-in dict (dictionary) data 
 -  the difference we are looking for 
 2. If it exists, return "Yes" or the indices.
 3. If it doesn't exist, put the current element $arr[i]$ as the key and its index $i$ as the value into the HashMap.
+4. this is because we have to return the index if the sum is found
 (key,value)=($i$, $arr[i]$)
 - so why do we insert it in the hashmap
   - we want two numbers whose sum is equal to the target
@@ -82,6 +96,15 @@ def sum_exist(arr, target):
             h[arr[i]] = i
     return [-1,-1]
 ```
+### Time Complexity: $O(n)$
+This is Linear Time complexity 
+- only one loop that iterates through the list once.
+- looking up a key (if complement in hm) takes, on average, $O(1)$ time.
+- Total Operations: Since you do one pass and each lookup is nearly instantaneous, the time taken grows in direct proportion to the size of the array. Linear
+- If the array size doubles, the time taken roughly doubles (instead of quadrupling).
+
+###Space Complexity: $O(n)$
+This is Linear Space.ems in your input list, the more space the dictionary takes up in RAM.
 ---
 
 ## Option 3: Two-Pointer Approach on a Sorted Array

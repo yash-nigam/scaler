@@ -3,6 +3,11 @@
 # minof(maxL, maxR) - height(i)
 # so we need to prepare in advance all minimum and max left and rights for all values so 2 differ arrays are required
 
+# first go trhough the array left to right
+# create a new array maxl, where for index 0 of maxl will contain the maxi
+# mum left most value for index i in original array
+# similarly we create one more array rmax which for every index will contain the rightmost
+# max value for that particular index
 class Solution:
     def rainwatertrap(self, heights: list[int]) -> int:
         maxlArray = []
